@@ -7,9 +7,7 @@ import rp2
 import sys
 
 # WiFi Credentials
-ssid = "Pixel_8955"
 ssid = "COMOTION ON KING-Guest"
-password = "123456789s"
 password = ""
 
 def connect():
