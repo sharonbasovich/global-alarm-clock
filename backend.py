@@ -5,11 +5,12 @@ from time import sleep
 from picozero import pico_led, pico_temp_sensor
 import rp2
 import sys
-
+import screen
 # WiFi Credentials
-ssid = "COMOTION ON KING-Guest"
-password = ""
 
+# ssid = "COMOTION ON KING-Guest"
+# password = ""
+ 
 def connect():
     wlan = network.WLAN(network.STA_IF)
     wlan.active(True)
@@ -20,6 +21,7 @@ def connect():
         print("Waiting for connection...")
         sleep(1)
     print(f"Connected on {wlan.ifconfig()[0]}")
+    screen.display_message(f"Connected on {wlan.ifconfig()[0]}")
     return wlan.ifconfig()[0]
 
 def open_socket(ip):
@@ -73,3 +75,4 @@ try:
     serve(connection)
 except KeyboardInterrupt:
     sys.exit()
+
